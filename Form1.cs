@@ -93,11 +93,7 @@ namespace Money_Manager
                 data_file_text += line;
             }
         }
-        string i;
+        public static DuplicateWaitObjectException;
 
-        private void main_list_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

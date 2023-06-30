@@ -34,6 +34,9 @@
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             main_list = new DataGridView();
+            main_list_name = new DataGridViewTextBoxColumn();
+            main_list_money = new DataGridViewTextBoxColumn();
+            Main_list_CashCredit = new DataGridViewTextBoxColumn();
             main_data4 = new Label();
             main_data5 = new Label();
             main_data3 = new Label();
@@ -48,9 +51,6 @@
             strip_settings_ML_text1 = new ToolStripMenuItem();
             strip_settings_ML_textbox1 = new ToolStripTextBox();
             strip_settings_ML_set = new ToolStripMenuItem();
-            main_list_name = new DataGridViewTextBoxColumn();
-            main_list_money = new DataGridViewTextBoxColumn();
-            Main_list_CashCredit = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)main_list).BeginInit();
             main_databox1.SuspendLayout();
             main_databox2.SuspendLayout();
@@ -71,7 +71,7 @@
             main_list.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(38, 94, 73);
-            dataGridViewCellStyle2.Font = new Font("Roboto Slab", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = Color.White;
             dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(61, 61, 61);
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
@@ -81,7 +81,7 @@
             main_list.Columns.AddRange(new DataGridViewColumn[] { main_list_name, main_list_money, Main_list_CashCredit });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = SystemColors.Window;
-            dataGridViewCellStyle3.Font = new Font("Roboto Slab", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
             dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
@@ -93,14 +93,14 @@
             main_list.Name = "main_list";
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = SystemColors.Control;
-            dataGridViewCellStyle4.Font = new Font("Roboto Slab", 8F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Bold, GraphicsUnit.Point);
             dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
             dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
             main_list.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             main_list.RowHeadersVisible = false;
-            dataGridViewCellStyle5.Font = new Font("Roboto Slab", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle5.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point);
             dataGridViewCellStyle5.ForeColor = Color.Black;
             dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
             main_list.RowsDefaultCellStyle = dataGridViewCellStyle5;
@@ -108,7 +108,24 @@
             main_list.RowTemplate.Resizable = DataGridViewTriState.False;
             main_list.Size = new Size(920, 533);
             main_list.TabIndex = 1;
-            main_list.CellContentClick += main_list_CellContentClick;
+            // 
+            // main_list_name
+            // 
+            main_list_name.HeaderText = "Name";
+            main_list_name.Name = "main_list_name";
+            main_list_name.ReadOnly = true;
+            // 
+            // main_list_money
+            // 
+            main_list_money.HeaderText = "Money";
+            main_list_money.Name = "main_list_money";
+            main_list_money.ReadOnly = true;
+            // 
+            // Main_list_CashCredit
+            // 
+            Main_list_CashCredit.HeaderText = "Cash/Credit";
+            Main_list_CashCredit.Name = "Main_list_CashCredit";
+            Main_list_CashCredit.ReadOnly = true;
             // 
             // main_data4
             // 
@@ -124,44 +141,45 @@
             // main_data5
             // 
             main_data5.AutoSize = true;
-            main_data5.Font = new Font("Roboto Slab", 27.75F, FontStyle.Bold, GraphicsUnit.Point);
+            main_data5.Font = new Font("Microsoft Sans Serif", 27.75F, FontStyle.Bold, GraphicsUnit.Point);
             main_data5.ForeColor = Color.Green;
             main_data5.Location = new Point(118, 45);
             main_data5.Name = "main_data5";
-            main_data5.Size = new Size(43, 49);
+            main_data5.Size = new Size(40, 42);
             main_data5.TabIndex = 1;
             main_data5.Text = "0";
+            main_data5.Click += main_data5_Click;
             // 
             // main_data3
             // 
             main_data3.AutoSize = true;
-            main_data3.Font = new Font("Roboto Slab", 20.25F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            main_data3.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
             main_data3.ForeColor = Color.Green;
             main_data3.Location = new Point(57, 9);
             main_data3.Name = "main_data3";
-            main_data3.Size = new Size(176, 35);
+            main_data3.Size = new Size(174, 31);
             main_data3.TabIndex = 0;
             main_data3.Text = "Total Money";
             // 
             // main_data2
             // 
             main_data2.AutoSize = true;
-            main_data2.Font = new Font("Roboto Slab", 20.25F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            main_data2.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
             main_data2.ForeColor = SystemColors.Control;
             main_data2.Location = new Point(53, 9);
             main_data2.Name = "main_data2";
-            main_data2.Size = new Size(174, 35);
+            main_data2.Size = new Size(178, 31);
             main_data2.TabIndex = 0;
             main_data2.Text = "Total People";
             // 
             // main_data1
             // 
             main_data1.AutoSize = true;
-            main_data1.Font = new Font("Roboto Slab", 27.75F, FontStyle.Bold, GraphicsUnit.Point);
+            main_data1.Font = new Font("Microsoft Sans Serif", 27.75F, FontStyle.Bold, GraphicsUnit.Point);
             main_data1.ForeColor = SystemColors.ButtonFace;
             main_data1.Location = new Point(107, 45);
             main_data1.Name = "main_data1";
-            main_data1.Size = new Size(43, 49);
+            main_data1.Size = new Size(40, 42);
             main_data1.TabIndex = 1;
             main_data1.Text = "0";
             // 
@@ -246,24 +264,6 @@
             strip_settings_ML_set.Size = new Size(164, 22);
             strip_settings_ML_set.Text = "Set Symbol";
             strip_settings_ML_set.Click += setSymbolToolStripMenuItem_Click;
-            // 
-            // main_list_name
-            // 
-            main_list_name.HeaderText = "Name";
-            main_list_name.Name = "main_list_name";
-            main_list_name.ReadOnly = true;
-            // 
-            // main_list_money
-            // 
-            main_list_money.HeaderText = "Money";
-            main_list_money.Name = "main_list_money";
-            main_list_money.ReadOnly = true;
-            // 
-            // Main_list_CashCredit
-            // 
-            Main_list_CashCredit.HeaderText = "Cash/Credit";
-            Main_list_CashCredit.Name = "Main_list_CashCredit";
-            Main_list_CashCredit.ReadOnly = true;
             // 
             // Form1
             // 
