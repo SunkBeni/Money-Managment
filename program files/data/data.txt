@@ -1,0 +1,2 @@
+itay	99999	cash
+dad	600	credit
