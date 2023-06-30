@@ -72,8 +72,8 @@ namespace Money_Manager
             foreach (string line in data_file_text.Split("\n"))
             {
                 name = line.Split("\t")[0];
-                money = line.Split("\t")[0];
-                cashcredit = line.Split("\t")[0];
+                money = line.Split("\t")[1];
+                cashcredit = line.Split("\t")[2];
                 main_list.Rows.Add(
                    new object[]
                    {
