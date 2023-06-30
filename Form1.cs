@@ -93,7 +93,6 @@ namespace Money_Manager
                 data_file_text += line;
             }
         }
-        //
 
         private void main_list_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
