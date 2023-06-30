@@ -85,7 +85,7 @@ namespace Money_Manager
 
         public void open_data_file()
         {
-            data_file_path = @"C:\Users\iliaz\C# Projects\Money Manager\program files\data";
+            data_file_path = @"C:\Users\iliaz\source\repos\Money-Managment\program files\data";
             lines = File.ReadAllLines(data_file_path).ToList();
 
             foreach (string line in lines)
@@ -93,7 +93,5 @@ namespace Money_Manager
                 data_file_text += line;
             }
         }
-        public static DuplicateWaitObjectException;
-
     }
 }

@@ -148,7 +148,6 @@
             main_data5.Size = new Size(40, 42);
             main_data5.TabIndex = 1;
             main_data5.Text = "0";
-            main_data5.Click += main_data5_Click;
             // 
             // main_data3
             // 
