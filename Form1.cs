@@ -7,19 +7,34 @@ namespace Money_Manager
 {
     public partial class Form1 : Form
     {
-        // symbol
-        public string symbol = "₪";
-        //
         // data_file
         public string data_file_path;
         public string data_file_text;
-        public List<string> lines = new List<string>();
         //
-        public static string filePathOne = @"C:\Users\iliaz\C# Projects\Money Manager\program files\data";
+        // top data
+        public int people;
+        public string symbol = "₪";
+        //
         public Form1()
         {
             InitializeComponent();
             List_reload();
+            
+            // calculate people
+            if (data_file_text == null)
+            {
+                people = 0;
+            }
+            else
+            {
+                foreach (string line in data_file_text.Split("\n"))
+                {
+                    people += 1;
+                }
+            }
+            main_data1.Text = people.ToString();
+            //
+            
         }
 
         private void setSymbolToolStripMenuItem_Click(object sender, EventArgs e)
@@ -65,7 +80,6 @@ namespace Money_Manager
         {
             main_list.Rows.Clear();
             open_data_file();
-            Debug.WriteLine(data_file_text);
             string name = "";
             string money = "";
             string cashcredit = "";
@@ -85,13 +99,12 @@ namespace Money_Manager
 
         public void open_data_file()
         {
-            data_file_path = "C:\\Users\\itayb\\PycharmProjects\\config.txt";
-            lines = File.ReadAllLines(data_file_path).ToList();
+            data_file_path = "C:\\Users\\iliaz\\programfiles\\userdata\\data.txt";
+            data_file_text = File.ReadAllText(data_file_path);
+        }
+        private void list_double_click(object sender, MouseEventArgs e)
+        {
 
-            foreach (string line in lines)
-            {
-                data_file_text += line;
-            }
         }
     }
 }
